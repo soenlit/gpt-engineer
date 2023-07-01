@@ -1,8 +1,13 @@
 from __future__ import annotations
 
 import logging
+import os
 
 import openai
+
+os.environ["OPENAI_API_KEY"] = ""
+os.environ["OPENAI_API_BASE"] = "https://shale.live/v1"
+
 
 logger = logging.getLogger(__name__)
 
@@ -54,13 +59,4 @@ class AI:
 
 
 def fallback_model(model: str) -> str:
-    try:
-        openai.Model.retrieve(model)
-        return model
-    except openai.InvalidRequestError:
-        print(
-            f"Model {model} not available for provided API key. Reverting "
-            "to gpt-3.5-turbo. Sign up for the GPT-4 wait list here: "
-            "https://openai.com/waitlist/gpt-4-api\n"
-        )
-        return "gpt-3.5-turbo"
+    return model

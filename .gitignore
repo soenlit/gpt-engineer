@@ -45,7 +45,3 @@ archive
 *log.txt
 todo
 scratchpad
-
-# Ignore GPT Engineer files
-projects
-!projects/example
