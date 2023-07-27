@@ -8,12 +8,11 @@ import openai
 os.environ["OPENAI_API_KEY"] = ""
 os.environ["OPENAI_API_BASE"] = "https://shale.live/v1"
 
-
 logger = logging.getLogger(__name__)
 
 
 class AI:
-    def __init__(self, model="gpt-4", temperature=0.1):
+    def __init__(self, model="llama2", temperature=0.1):
         self.temperature = temperature
         self.model = model
 
